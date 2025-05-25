@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 interface GalleryItem {
   id: string;
-  type: 'image' | 'video';
+  type: 'image';
   src: string;
   alt: string;
   description: string;
@@ -19,14 +19,19 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  { id: "1", type: "image", src: "https://placehold.co/600x400.png", alt: "Students in a classroom", description: "Engaging classroom sessions", aiHint: "classroom students" },
-  { id: "2", type: "image", src: "https://placehold.co/600x400.png", alt: "School playground", description: "Outdoor activities and play", aiHint: "school playground" },
-  { id: "3", type: "video", src: "https://placehold.co/600x400.png", alt: "School Annual Day celebration", description: "Highlights from our Annual Day", aiHint: "school event" }, // Placeholder for video
-  { id: "4", type: "image", src: "https://placehold.co/600x400.png", alt: "Art and craft exhibition", description: "Students' creative artworks", aiHint: "student art" },
-  { id: "5", type: "image", src: "https://placehold.co/600x400.png", alt: "Vocational training workshop", description: "Hands-on vocational skills", aiHint: "vocational training" },
-  { id: "6", type: "video", src: "https://placehold.co/600x400.png", alt: "Sports day event", description: "Students participating in sports", aiHint: "school sports" }, // Placeholder for video
-  { id: "7", type: "image", src: "https://placehold.co/600x400.png", alt: "School building exterior", description: "Our welcoming school campus", aiHint: "school building" },
-  { id: "8", type: "image", src: "https://placehold.co/600x400.png", alt: "Students learning computers", description: "Digital literacy program", aiHint: "students computers" },
+  { id: "1", type: "image", src: "/images/SponMarble2.webp", alt: "Students in a classroom", description: "Engaging classroom sessions", aiHint: "classroom students" },
+  { id: "2", type: "image", src: "/images/Spoon Marble.webp", alt: "School playground", description: "Outdoor activities and play", aiHint: "school playground" },
+  { id: "3", type: "image", src: "/images/Playing.webp", alt: "School Annual Day celebration", description: "Highlights from our Annual Day", aiHint: "school event" }, // Placeholder for video
+  { id: "4", type: "image", src: "/images/Plays.webp", alt: "Art and craft exhibition", description: "Students' creative artworks", aiHint: "student art" },
+  { id: "5", type: "image", src: "/images/Events.webp", alt: "Vocational training workshop", description: "Hands-on vocational skills", aiHint: "vocational training" },
+  { id: "6", type: "image", src: "/images/SponMarble2.webp", alt: "Sports day event", description: "Students participating in sports", aiHint: "school sports" }, // Placeholder for video
+  { id: "7", type: "image", src: "/images/SponMarble2.webp", alt: "School building exterior", description: "Our welcoming school campus", aiHint: "school building" },
+  { id: "8", type: "image", src: "/images/SponMarble2.webp", alt: "Students learning computers", description: "Digital literacy program", aiHint: "students computers" },
+  { id: "9", type: "image", src: "/images/TEACHING.jpg", alt: "Teacher explaining a concept", description: "Dedicated teachers in action", aiHint: "teacher explaining" },
+  { id: "10", type: "image", src: "/images/Teaching (2).webp", alt: "Group teaching session", description: "Interactive group learning", aiHint: "group teaching" },
+  { id: "11", type: "image", src: "/images/Teaching (3).jpg", alt: "Teacher helping a student", description: "Personalized attention from teachers", aiHint: "teacher helping student" },
+  { id: "12", type: "image", src: "/images/Teaching (4).jpg", alt: "Teacher writing on blackboard", description: "Traditional teaching methods", aiHint: "teacher blackboard" },
+  { id: "13", type: "image", src: "/images/Teaching (5).jpg", alt: "Teacher interacting with class", description: "Engaging classroom interaction", aiHint: "teacher class interaction" },
 ];
 
 export default function GalleryPage() {
@@ -69,18 +74,13 @@ export default function GalleryPage() {
             </CardContent>
             <CardFooter className="p-4 bg-card">
               <div className="flex items-center gap-2">
-                {item.type === 'image' ? <ImageIconLucide className="h-5 w-5 text-primary" /> : <Video className="h-5 w-5 text-primary" />}
+                {item.type === 'image' ? <ImageIconLucide className="h-5 w-5 text-primary" /> : ""}
                 <p className="text-sm text-foreground/80">{item.description}</p>
               </div>
             </CardFooter>
           </Card>
         ))}
       </section>
-      {galleryItems.some(item => item.type === 'video') && (
-        <p className="text-center text-sm text-muted-foreground mt-8">
-            Note: Video previews are placeholders. Actual video integration (e.g., YouTube embeds) would be implemented in a full version.
-        </p>
-      )}
     </div>
   );
 }

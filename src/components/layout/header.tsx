@@ -41,7 +41,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 items-center">
+        <nav className="hidden md:flex gap-6 items-center p-4">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.name}

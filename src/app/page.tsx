@@ -20,48 +20,48 @@ interface SuccessStory {
 const homePageStories: SuccessStory[] = [
   {
     id: "1",
-    name: "Rohan P.",
-    achievement: "Won Regional Art Competition",
-    story: "Rohan discovered his passion for art at our school. With guidance from our dedicated art teacher, he honed his skills and created a stunning piece that won first place...",
-    imageUrl: "https://placehold.co/400x300.png",
-    tags: ["Art", "Creativity"],
-    imageHint: "student painting",
+    name: "Akash V.",
+    achievement: "Achieved Academic Growth in Reading",
+    story: "Akash found reading challenging initially. Through personalized support and engaging learning materials, he significantly improved his reading comprehension and now enjoys exploring new books.",
+    imageUrl: "/images/Teaching (3).jpg",
+    tags: ["Academics", "Reading"],
+    imageHint: "student reading in class",
   },
   {
     id: "2",
-    name: "Priya S.",
-    achievement: "Mastered Independent Living Skills",
-    story: "Priya joined us with challenges in daily activities. Through our tailored life skills program, she has learned to cook, manage her chores, and navigate public transport independently...",
-    imageUrl: "https://placehold.co/400x300.png",
+    name: "Shruti D.",
+    achievement: "Developed Confidence in Daily Activities",
+    story: "Shruti gained confidence in performing everyday tasks through our structured life skills program. She actively participates in preparing meals and managing personal responsibilities, fostering greater independence.",
+    imageUrl: "/images/Spoon Marble.webp",
     tags: ["Life Skills", "Independence"],
-    imageHint: "student cooking",
+    imageHint: "student doing life skills activity",
   },
    {
     id: "3",
-    name: "Amit K.",
-    achievement: "Secured Internship at Local Bakery",
-    story: "Amit developed a keen interest in baking through our vocational training. He worked hard, improved his skills, and with our support, successfully secured an internship...",
-    imageUrl: "https://placehold.co/400x300.png",
-    tags: ["Vocational", "Career"],
-    imageHint: "student baking",
+    name: "Kunal M.",
+    achievement: "Showcased Teamwork on the Playground",
+    story: "Kunal thrived in our recreational activities, demonstrating excellent teamwork and positive sportsmanship during group games. His enthusiasm encourages others to participate and build friendships.",
+    imageUrl: "/images/Playing.webp",
+    tags: ["Recreation", "Teamwork"],
+    imageHint: "student playing outdoors",
   },
 ];
 
 export default function HomePage() {
   return (
     <div className="space-y-16 md:space-y-24"> {/* Increased vertical spacing */}
-      <section className="relative text-center py-20 md:py-28 bg-primary/10 rounded-lg shadow-sm overflow-hidden"> {/* Increased padding, added relative and overflow-hidden */}
+      <section className="relative text-center py-20 md:py-28 bg-primary/10 rounded-lg shadow-sm"> {/* Increased padding, added relative and overflow-hidden */}
         <Image
-          src="https://placehold.co/1200x800.png" // Placeholder background image
+src="/images/HomePage.webp"
           alt="School campus background"
           layout="fill"
           objectFit="cover"
-          className="opacity-20 z-0" // Low opacity and behind content
+          className="opacity-40 z-0" // Low opacity and behind content
           data-ai-hint="school campus"
         />
         <div className="relative z-10 container mx-auto px-4"> {/* Ensure content is above background */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8"> {/* Increased margin-bottom */}
-            Sanyt Gadge baba Niwasi Matimand High School Armori
+            Sant Gadge baba Niwasi Matimand High School Armori
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-12"> {/* Increased margin-bottom */}
             {SITE_DESCRIPTION}
@@ -87,8 +87,8 @@ export default function HomePage() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://firebasestudio.googleapis.com/v0/b/firebase-studio-production.appspot.com/o/asset-hosting%2FUXpDVERnWlFmTEVKRVZMcHlTUXV%2Fgenerated%2Flarge-1722431414637.jpeg?alt=media&token=2c40b256-9527-4986-a77a-b3c9b78cd10d"
-              alt="SGBNM High School building exterior"
+          src="/images/HomePage.webp" // Placeholder background image
+          alt="SGBNM High School building exterior"
               width={600}
               height={400}
               className="w-full h-auto object-cover"
