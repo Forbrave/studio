@@ -1,7 +1,7 @@
 
 "use client"; // Calendar component and state management make this a client component
 
-import { useState, useEffect }_ from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from '@/components/ui/badge';
@@ -75,7 +75,7 @@ export default function EventsPage() {
     setEvents(generateMockEvents(new Date()));
   }, []);
 
-  useEffect(()_ => {
+  useEffect(() => {
     if (date) {
       // Regenerate or filter events when the selected month in the calendar changes
       setEvents(generateMockEvents(date));
@@ -173,10 +173,3 @@ export default function EventsPage() {
     </div>
   );
 }
-
-// Note: Metadata for client components should be exported from parent layout or page if server-rendered.
-// Since this is a client component page, we add a basic title here but it might be overridden.
-export const metadata = {
-  title: 'Events Calendar',
-  description: 'Upcoming events and important dates at SGBNM High School Armori.',
-};
