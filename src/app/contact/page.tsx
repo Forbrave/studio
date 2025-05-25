@@ -1,8 +1,8 @@
 
 import { Mail, Phone, MapPin, Building } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
-import MapComponent from '@/components/map';
-import { CONTACT_EMAIL, CONTACT_PHONE, SCHOOL_ADDRESS, SCHOOL_COORDINATES } from '@/lib/constants';
+// import MapComponent from '@/components/map'; // Removed MapComponent import
+import { CONTACT_EMAIL, CONTACT_PHONE, SCHOOL_ADDRESS } from '@/lib/constants'; // Removed SCHOOL_COORDINATES
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,11 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  // The API key should be set as an environment variable NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  // It's accessed here to pass to the client component, but it's better if MapComponent handles it internally if possible.
-  // For this setup, passing it from server component to client component.
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || null;
-
   return (
     <div className="space-y-12">
       <section className="text-center">
@@ -61,12 +56,18 @@ export default function ContactPage() {
 
       <section>
         <h2 className="text-3xl font-semibold text-center text-foreground mb-8">Find Us on the Map</h2>
-        <MapComponent coordinates={SCHOOL_COORDINATES} apiKey={googleMapsApiKey} />
-         {!googleMapsApiKey && (
-          <p className="text-center text-sm text-destructive mt-4">
-            Map display requires a Google Maps API Key. Please set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY.
-          </p>
-        )}
+        <div className="aspect-[4/3] md:aspect-video w-full rounded-lg overflow-hidden shadow-md">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14951.724934225529!2d79.98310769999999!3d20.4680174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2c8d30398483b5%3A0x53e4006d8fbd7b68!2sSant%20Gadgebaba%20Nivasi%20Matimand%20Vidhyalay%20Armori%2C%20Dist%20-gadchiroli!5e0!3m2!1sen!2sin!4v1748176157401!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border:0 }} 
+            allowFullScreen={true} // React uses boolean for allowFullScreen
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="School Location Map"
+          ></iframe>
+        </div>
       </section>
     </div>
   );
