@@ -2,9 +2,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; // Added import for Image
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X, School } from "lucide-react";
+import { Menu, X } from "lucide-react"; // Removed School import as it's replaced by Image
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { NAV_ITEMS, SITE_NAME_SHORT } from "@/lib/constants";
@@ -27,8 +28,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2 mr-6" onClick={() => setIsMobileMenuOpen(false)}>
-          <School className="h-7 w-7 text-primary" />
-          <span className="font-bold text-lg">{SITE_NAME_SHORT}</span>
+          <Image
+            src="https://placehold.co/120x40.png" // Placeholder logo
+            alt={`${SITE_NAME_SHORT} Logo`}
+            width={120}
+            height={40}
+            className="h-8 w-auto md:h-10" // Adjusted height for responsiveness
+            data-ai-hint="school logo"
+            priority // Add priority if it's LCP
+          />
+          <span className="font-bold text-lg sr-only md:not-sr-only">{SITE_NAME_SHORT}</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,8 +69,14 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                    <School className="h-6 w-6 text-primary" />
-                    <span className="font-semibold">{SITE_NAME_SHORT}</span>
+                     <Image
+                        src="https://placehold.co/100x30.png" // Smaller placeholder for mobile sheet
+                        alt={`${SITE_NAME_SHORT} Logo`}
+                        width={100}
+                        height={30}
+                        data-ai-hint="school logo"
+                      />
+                    <span className="font-semibold sr-only">{SITE_NAME_SHORT}</span>
                   </Link>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">

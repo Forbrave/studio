@@ -14,7 +14,7 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { name: "Home", href: "/", icon: Home },
-  { name: "Success Stories", href: "/success-stories", icon: Award },
+  // { name: "Success Stories", href: "/success-stories", icon: Award }, // Removed this line
   { name: "Gallery", href: "/gallery", icon: GalleryThumbnails },
   { name: "Events", href: "/events", icon: CalendarDays },
   { name: "Contact", href: "/contact", icon: Mail },
