@@ -6,7 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants';
-import { APIProvider } from '@vis.gl/react-google-maps';
+import MapsApiProvider from '@/components/layout/maps-api-provider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,14 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
-        <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
+        <MapsApiProvider>
           <Header />
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
           </main>
           <Footer />
           <Toaster />
-        </APIProvider>
+        </MapsApiProvider>
       </body>
     </html>
   );
