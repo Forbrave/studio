@@ -6,74 +6,57 @@
 @layer base {
   :root {
     --background: 207 88% 94%; /* Light blue */
-    --foreground: 215 28% 17%; /* Dark blue/grey */
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
-    --primary: 207 88% 68%; /* Calm blue */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 207 60% 85%; /* Lighter shade of primary blue */
-    --secondary-foreground: 215 28% 17%;
-    --muted: 207 50% 90%;
-    --muted-foreground: 207 30% 45%;
-    --accent: 125 40% 72%; /* Soft green */
-    --accent-foreground: 120 25% 15%; /* Dark green/black */
+    --foreground: 220 5% 15%; /* Dark grey */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 5% 15%; /* Dark grey */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 5% 15%; /* Dark grey */
+    --primary: 210 80% 55%; /* Light blue */
+    --primary-foreground: 220 5% 15%; /* Dark grey */
+    --secondary: 210 60% 85%; /* Slightly lighter blue */
+    --secondary-foreground: 220 5% 15%; /* Dark grey */
+    --muted: 220 5% 95%; /* Very light grey */
+    --muted-foreground: 220 5% 50%; /* Medium grey */
+    --accent: 210 70% 65%; /* Slightly brighter blue */
+    --accent-foreground: 220 5% 15%; /* Dark grey */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 207 30% 80%;
-    --input: 207 30% 85%;
-    --ring: 207 88% 68%; /* Primary color for focus rings */
+    --border: 210 15% 90%; /* Light grey-blue */
+    --input: 210 15% 90%; /* Light grey-blue */
+    --ring: 210 60% 75%; /* Light primary blue */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-
-    /* Sidebar colors aligned with the new theme */
-    --sidebar-background: 207 80% 90%;
-    --sidebar-foreground: 215 28% 17%;
-    --sidebar-primary: 207 88% 68%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 125 40% 72%;
-    --sidebar-accent-foreground: 120 25% 15%;
-    --sidebar-border: 207 30% 75%;
-    --sidebar-ring: 207 88% 68%;
   }
 
   .dark {
-    /* Keeping dark theme defaults, can be customized if needed */
-    --background: 215 28% 17%; 
-    --foreground: 207 88% 94%; 
-    --card: 215 28% 17%;
-    --card-foreground: 207 88% 94%;
-    --popover: 215 28% 17%;
-    --popover-foreground: 207 88% 94%;
-    --primary: 207 88% 68%; 
-    --primary-foreground: 215 28% 17%; 
-    --secondary: 207 60% 25%; 
-    --secondary-foreground: 207 88% 94%;
-    --muted: 207 50% 20%;
-    --muted-foreground: 207 30% 75%;
-    --accent: 125 40% 72%; 
-    --accent-foreground: 207 88% 94%; 
-    --destructive: 0 62.8% 30.6%;
+    --background: 210 20% 10%; /* Very dark blue-grey */
+    --foreground: 210 15% 80%; /* Light grey */
+    --card: 210 20% 15%; /* Dark blue-grey */
+    --card-foreground: 210 15% 80%; /* Light grey */
+    --popover: 210 20% 10%; /* Very dark blue-grey */
+    --popover-foreground: 210 15% 80%; /* Light grey */
+    --primary: 210 40% 40%; /* Darker, desaturated blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 210 20% 20%; /* Slightly lighter dark blue-grey */
+    --secondary-foreground: 210 15% 80%; /* Light grey */
+    --muted: 210 10% 20%; /* Dark grey */
+    --muted-foreground: 210 10% 50%; /* Medium grey */
+    --accent: 210 50% 50%; /* Darker blue */
+    --accent-foreground: 0 0% 100%; /* White */
+    --destructive: 0 62.8% 30.6%; /* Dark red */
     --destructive-foreground: 0 0% 98%;
-    --border: 207 30% 30%;
-    --input: 207 30% 25%;
+    --border: 217.2 32.6% 27.5%;
+    --input: 217.2 32.6% 27.5%;
     --ring: 207 88% 68%;
 
     --sidebar-background: 215 30% 15%;
-    --sidebar-foreground: 207 80% 90%;
-    --sidebar-primary: 207 88% 68%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 125 40% 72%;
-    --sidebar-accent-foreground: 120 25% 15%;
     --sidebar-border: 215 30% 25%;
   }
 }
-
 @layer base {
   * {
     @apply border-border;

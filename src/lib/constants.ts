@@ -20,7 +20,7 @@ export const NAV_ITEMS: NavItem[] = [
   { name: "Contact", href: "/contact", icon: Mail },
 ];
 
-export const CONTACT_EMAIL = "info@sgbnmarmori.edu";
+export const CONTACT_EMAIL = "santgadgebaba318@gmail.com";
 export const CONTACT_PHONE = "+91 8605795849";
 export const SCHOOL_ADDRESS = "Sant Gadge baba Niwasi Matimand High School, Armori, Gadchiroli, Maharashtra, India";
 export const SCHOOL_COORDINATES = { lat: 20.4649, lng: 79.9773 }; // Example coordinates for Armori

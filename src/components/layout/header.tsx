@@ -27,13 +27,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 mr-6" onClick={() => setIsMobileMenuOpen(false)}>
+        <Link href="/" className="flex items-center gap-2 mr-6 pl-3" onClick={() => setIsMobileMenuOpen(false)}>
           <Image
-            src="https://placehold.co/120x40.png" // Placeholder logo
+            src="/images/Gadgemaharaj.webp" // Placeholder logo
             alt={`${SITE_NAME_SHORT} Logo`}
             width={120}
             height={40}
-            className="h-8 w-auto md:h-10" // Adjusted height for responsiveness
+            className="h-8 rounded-lg w-auto md:h-10 mr-4 object-contain" // Adjusted height for responsiveness and added margin/object-fit
             data-ai-hint="school logo"
             priority // Add priority if it's LCP
           />
@@ -70,10 +70,12 @@ export default function Header() {
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                      <Image
-                        src="https://placehold.co/100x30.png" // Smaller placeholder for mobile sheet
-                        alt={`${SITE_NAME_SHORT} Logo`}
+ src="/images/Gadgemaharaj.webp"
+                         alt={`${SITE_NAME_SHORT} Logo`}
                         width={100}
                         height={30}
+                        className="h-8 rounded-lg w-auto md:h-10 pl-3 object-contain" // Adjusted height for responsiveness and added margin/object-fit
+
                         data-ai-hint="school logo"
                       />
                     <span className="font-semibold sr-only">{SITE_NAME_SHORT}</span>

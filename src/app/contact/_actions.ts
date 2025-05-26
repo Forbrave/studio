@@ -2,11 +2,12 @@
 "use server";
 
 import { z } from "zod";
+import nodemailer from 'nodemailer';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters long."),
   email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters long.").max(500, "Message must be less than 500 characters."),
+  message: z.string().min(2, "Message must be at least 2 characters long.").max(500, "Message must be less than 500 characters."),
 });
 
 export type ContactFormState = {
@@ -37,20 +38,41 @@ export async function submitContactForm(
     };
   }
 
-  const { name, email, message } = validatedFields.data;
+  const { name, email, message } = validatedFields.data; // Keep this line
 
-  // In a real application, you would send an email, save to a database, etc.
-  // For this example, we'll just log it and simulate success.
-  console.log("Contact Form Submission:");
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Message:", message);
+  // Create a transporter object using your email service details
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail', // e.g., 'Gmail', 'SendGrid', etc.
+    auth: {
+      user: 'adityagajbhiye2503@gmail.com', // Replace with your email address
+      pass: 'ffes vbzz iswb ybwp', // Replace with your email password or app-specific password
+    },
+  });
 
-  // Simulate network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  return {
-    status: "success",
-    message: "Thank you for your message! We will get back to you soon.",
+  // Email content
+  const mailOptions = {
+    from: 'adityagajbhiye125@gmail.com', // Replace with your email address
+    to: 'adityagajbhiye2503@gmail.com', // Recipient email address
+    subject: `New message from contact form - ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
   };
+
+  try {
+    // Send the email
+    await transporter.sendMail(mailOptions);
+
+    console.log('Email sent successfully!');
+
+    return {
+      status: 'success',
+      message: 'Thank you for your message! We will get back to you soon.',
+    };
+  } catch (error) {
+    console.error('Error sending email:', error);
+
+    return {
+      status: 'error',
+      message: 'There was an error sending your message. Please try again later.',
+    };
+  }
 }
